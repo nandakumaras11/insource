@@ -1,0 +1,13 @@
+.homeBg{
+    background-image: url("/bg.webp");
+    height: 85vh;
+    background-size: cover;
+}
+
+.menuBar {
+    height: 4.5rem;
+    display: flex;
+    background-color: #0367ab59;
+    /* filter: blur(1px); */
+    color: white;
+}
