@@ -7,7 +7,42 @@
 .menuBar {
     height: 4.5rem;
     display: flex;
+    align-items: center;
+    width: 85%;
+}
+
+.menuBar .menuItem{
+    width: 11%;
+    font-size: 0.9em;
+    position: relative;
+}
+.menuBar .menuText{
+    font-weight: 200;
+    text-align: center;
+}
+.menuContainer{
+    display: flex;
+    padding: var(--padding);
     background-color: #0367ab59;
-    /* filter: blur(1px); */
     color: white;
+}
+.socialMediaMenu{
+    display: flex;
+    width: 10%;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.socialMediaMenu div {
+    border: 1px solid;
+    padding: 5%;
+    border-radius: 50%;
+}
+
+.activeMenu{
+    height: 5px;
+    background-color: white;
+    width: 95%;
+    bottom: -1.8rem;
+    position: absolute;
 }
