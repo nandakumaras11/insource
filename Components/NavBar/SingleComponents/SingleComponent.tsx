@@ -15,7 +15,7 @@ export type SingleServiceType = {
 
 export const SingleProduct = ({ productName, bg, link }: SingleProductType) => {
     return (
-        <div className="product" style={{ 'backgroundImage': `/${bg}` }}>
+        <div className="product" style={{ 'backgroundImage': `url(/${bg})` }}>
             <div className="productName" >
                 {productName}
             </div>

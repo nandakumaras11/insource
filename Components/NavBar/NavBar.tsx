@@ -11,8 +11,8 @@ export const NavBar = () => {
                         <FaRegClock />
                     </div>
                     <div className="text">
-                        <div className="line">Mon-Sat 9AM to 6PM</div>
-                        <div className="line">Sunday Closed</div>
+                        <div className="textLine">Mon-Sat 9AM to 6PM</div>
+                        <div className="textLine">Sunday Closed</div>
                     </div>
                 </div>
                 <div className="navBarRightItem">
@@ -20,8 +20,8 @@ export const NavBar = () => {
                         <GrMail />
                     </div>
                     <div className="text">
-                        <div className="line">Email</div>
-                        <div className="line">contact@global.com</div>
+                        <div className="textLine">Email</div>
+                        <div className="textLine">contact@global.com</div>
                     </div>
                 </div>
                 <div className="navBarRightItem">
@@ -29,8 +29,8 @@ export const NavBar = () => {
                         <FaPhoneVolume />
                     </div>
                     <div className="text">
-                        <div className="line"> Call Us</div>
-                        <div className="line">(+91)8554654654654</div>
+                        <div className="textLine"> Call Us</div>
+                        <div className="textLine">(+91)8554654654654</div>
                     </div>
                 </div>
             </div>

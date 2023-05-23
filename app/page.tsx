@@ -67,7 +67,7 @@ export default function Home() {
       description: "Swift and efficient shipment via air transportation, ensuring quick delivery of goods to destinations worldwide with speed and reliability."
     },
     {
-      image: "/truck.jpg",
+      image: "/roadtransport.jpg",
       service: "ROAD TRANSPORT",
       icon: <FaTruck />,
       description: "Reliable and efficient shipment via road transportation, offering seamless delivery of goods to local and regional destinations with flexibility and timeliness."

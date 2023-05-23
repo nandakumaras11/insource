@@ -314,7 +314,7 @@
 }
 
 .product {
-    background-image: url("/automobile.jpg");
+    /* background-image: url("/automobile.jpg"); */
     background-blend-mode: darken;
     background-position: center;
     background-size: cover;

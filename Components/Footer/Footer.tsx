@@ -3,7 +3,7 @@ import "./Footer.css"
 import { SocialMediaMenu } from "../NavBar/SingleComponents/SingleComponent"
 const Footer = () => {
   return (
-    <div className="copyRightFooterContainer">
+    <section className="copyRightFooterContainer">
       <div className="footerContainer">
         <div className="col">
           <div className="footerCompanyName"><b>Insource</b> Global</div>
@@ -41,7 +41,7 @@ const Footer = () => {
 
       </div>
       <div className="copyRight">Copyright@2023. All rights reserved</div>
-    </div>
+    </section>
   )
 }
 
