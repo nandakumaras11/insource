@@ -1,11 +1,18 @@
 @tailwind base;
 
+html, body{
+  height: 100%;
+  scroll-behavior: smooth;
+}
 
 :root {
   --black: #000000;
   --white: #ffffff;
   --red: #e10800;
+  --gray: #7e7c7c;
   --padding: 0% 15%;
+  --padding1: 0% 11%;
+  --bg_gray:#f4f4f4
 }
 
 @media (prefers-color-scheme: dark) {

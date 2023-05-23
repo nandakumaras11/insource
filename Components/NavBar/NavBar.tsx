@@ -8,7 +8,7 @@ export const NavBar = () => {
             <div className="navBarRight">
                 <div className="navBarRightItem">
                     <div className="icon">
-                        <FaRegClock/>
+                        <FaRegClock />
                     </div>
                     <div className="text">
                         <div className="line">Mon-Sat 9AM to 6PM</div>
@@ -17,7 +17,7 @@ export const NavBar = () => {
                 </div>
                 <div className="navBarRightItem">
                     <div className="icon">
-                    <GrMail  />
+                        <GrMail />
                     </div>
                     <div className="text">
                         <div className="line">Email</div>
@@ -26,7 +26,7 @@ export const NavBar = () => {
                 </div>
                 <div className="navBarRightItem">
                     <div className="icon">
-                    <FaPhoneVolume />
+                        <FaPhoneVolume />
                     </div>
                     <div className="text">
                         <div className="line"> Call Us</div>
@@ -38,4 +38,22 @@ export const NavBar = () => {
     )
 }
 
-// export  NavBar
+import React from 'react'
+interface SingleMenuItemTypes {
+    icon?: string,
+    menuText: string,
+    link?: string
+}
+export const SingleMenuItem = ({ icon, menuText, link }: SingleMenuItemTypes) => {
+    return (
+        <div className="menuItem">
+            <div className="menuIcon">{icon}</div>
+            <div className="menuText">{menuText}
+                <div className="activeMenu">
+                   <span>{menuText}</span> 
+                </div>
+            </div>
+
+        </div>
+    )
+}
