@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./home.css";
 import { FaFacebookSquare, FaInstagram, FaWhatsapp, FaShippingFast, FaPlaneDeparture, FaRegCheckCircle, FaBoxOpen, FaBoxes, FaHandshake, FaStoreAlt, FaTruck, FaShip, FaWarehouse } from "react-icons/fa";
 import { SingleMenuItem } from "@/Components/NavBar/NavBar";
-import { SingleProduct, SingleProductType, SingleService, SingleServiceType } from "@/Components/NavBar/SingleComponents/SingleComponent";
+import { SingleProduct, SingleProductType, SingleService, SingleServiceType, SocialMediaMenu } from "@/Components/NavBar/SingleComponents/SingleComponent";
 import Footer from "@/Components/Footer/Footer";
 export default function Home() {
   const menuInfo = [
@@ -93,17 +93,7 @@ export default function Home() {
             return <SingleMenuItem icon={menu.icon} link={menu.link} menuText={menu.menuText} />
           })}
         </div>
-        <div className="socialMediaMenu">
-          <div className="facebook">
-            <FaFacebookSquare />
-          </div>
-          <div className="instagram">
-            <FaInstagram />
-          </div>
-          <div className="whatsApp">
-            <FaWhatsapp />
-          </div>
-        </div>
+       <SocialMediaMenu/>
       </div>
       {/* menu end */}
       <div className="bannerOverlay">
@@ -159,7 +149,7 @@ export default function Home() {
         <div className="flightImage"></div>
       </div>
       <div className="aboutUsTextContainer">
-        <div className="aboutUsText"><FaPlaneDeparture color="#e10800" /> About <span>Us</span></div>
+        <div className="aboutUsText"><FaPlaneDeparture color="#e10800" /> About &nbsp;<span> Us</span></div>
         <div className="aboutUsHead">Bridging Borders, Empowering Business</div>
         <div className="aboutUsDescription">"Our import and export company specializes in facilitating seamless trade between India, Seychelles, and Maldives. With a strong focus on customer satisfaction, we provide comprehensive logistics solutions tailored to meet the unique requirements of each country. Our team of experts ensures efficient and secure transportation of goods, managing all aspects of the import/export process. From customs clearance to warehousing and distribution, we offer end-to-end services to streamline international trade. Leveraging our extensive network and industry knowledge, we strive to deliver exceptional value to our clients by ensuring timely delivery, competitive pricing, and hassle-free transactions."</div>
 
@@ -180,7 +170,7 @@ export default function Home() {
     </section>
     <section className="productContainer">
       <div className="sectionHead">
-        <FaBoxes color="#e10800" /> Our <span>Products</span>
+        <FaBoxes color="#e10800" /> Our &nbsp;<span>Products</span>
       </div>
       <div className="sectionMainHead">Complete Import and Export Solutions</div>
       <div className="productDescription">Experience a world of possibilities with our import and exporting company. We offer a diverse range of products to meet your needs. From top-notch automobile spare parts and reliable building materials to delicious food stuff and fresh marine products, we have it all. Enhance your hospitality offerings with our exceptional items, ideal for hotels and resorts. Our comprehensive solutions ensure smooth logistics management, cost-effectiveness, and compliance with international trade regulations. With our expertise and dedication to customer satisfaction, we empower your business to thrive in the global market. Partner with us for efficient and reliable import and export services that open doors to success.
@@ -199,7 +189,7 @@ export default function Home() {
 
     <section className="ourServicesContainer">
       <div className="sectionHead">
-        <FaHandshake color="#e10800" /> Our <span>Services</span>
+        <FaHandshake color="#e10800" />Our&nbsp;<span>Services</span>
       </div>
       <div className="serviceDetails">
         <div className="serviceTextSection">
@@ -266,9 +256,9 @@ export default function Home() {
        
         </div>
         <div className="sectionHead">
-          <FaHandshake color="#e10800" /> Contact <span>Us</span>
+          <FaHandshake color="#e10800" /> Contact&nbsp;<span>Us</span>
         </div>
-        <div className="sectionMainHead">Get In Touch</div>
+        <div className="sectionMainHead gap">Get In Touch</div>
     
       <div className="address">
        <div className="conatctUsSubHead">Address</div> 
@@ -293,9 +283,17 @@ export default function Home() {
         </div>
       </div>
       <hr className="line"></hr>
+      <div className="followUs">
+       <div className="conatctUsSubHead followUsHead">FOLLOW US</div> 
+        <div className="contactUsValues">
+          <div><SocialMediaMenu/></div>
+        </div>
+      </div>
+
+      
       </div>
       <div className="contactUsRight">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15759.902642464564!2d76.61347974257657!3d9.065981555947696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06059bba90a3d7%3A0x82c2d2c84f324a32!2sAyikunnam%2C%20Kerala%20690521!5e0!3m2!1sen!2sin!4v1684827301162!5m2!1sen!2sin" width="100%" height="100%" style={{border:'0'}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src={process.env.REACT_APP_MAP} width="100%" height="100%" style={{border:'0'}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
     <Footer />

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { FaPlaneDeparture } from "react-icons/fa"
+import { FaFacebookSquare, FaInstagram, FaPlaneDeparture, FaWhatsapp } from "react-icons/fa"
 
 export type SingleProductType = {
     productName: string
@@ -7,10 +7,10 @@ export type SingleProductType = {
     bg: string
 }
 export type SingleServiceType = {
-    image?:string,
-    service:string,
-    icon?:any,
-    description:string
+    image?: string,
+    service: string,
+    icon?: any,
+    description: string
 }
 
 export const SingleProduct = ({ productName, bg, link }: SingleProductType) => {
@@ -24,15 +24,33 @@ export const SingleProduct = ({ productName, bg, link }: SingleProductType) => {
     )
 }
 
-export const SingleService = ({image="/flight.jpg", service,icon, description}:SingleServiceType) => {
-  return (
-   <div className="service">
-    <div className="serviceImage" style={{'backgroundImage':`url(${image})`}}></div>
-    <div className="serviceInfo">
-    <div className="serviceIcon">{icon}</div>
-    <div className="serviceName tu">{service}</div>
-    <div className="serviceDescription">{description}</div>
-    </div>
-   </div>
-  )
+export const SingleService = ({ image = "/flight.jpg", service, icon, description }: SingleServiceType) => {
+    return (
+        <div className="service">
+            <div className="serviceImage" style={{ 'backgroundImage': `url(${image})` }}></div>
+            <div className="serviceInfo">
+                <div className="serviceIcon">{icon}</div>
+                <div className="serviceName tu">{service}</div>
+                <div className="serviceDescription">{description}</div>
+            </div>
+        </div>
+    )
+}
+
+import React from 'react'
+
+export const SocialMediaMenu = () => {
+    return (
+        <div className="socialMediaMenu">
+            <div className="facebook">
+                <FaFacebookSquare />
+            </div>
+            <div className="instagram">
+                <FaInstagram />
+            </div>
+            <div className="whatsApp">
+                <FaWhatsapp />
+            </div>
+        </div>
+    )
 }
