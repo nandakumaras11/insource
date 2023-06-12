@@ -1,6 +1,7 @@
 import { FaEnvelope, FaLocationArrow, FaPhone, FaPhoneAlt } from "react-icons/fa"
 import "./Footer.css"
 import { SocialMediaMenu } from "../NavBar/SingleComponents/SingleComponent"
+import Link from "next/link"
 const Footer = () => {
   return (
     <section className="copyRightFooterContainer">
@@ -34,7 +35,8 @@ const Footer = () => {
           <div className="redHeadFooter">Working Hours</div>
           <div className="footerLine"></div>
           <div className="footerItem">9AM- 6PM. Monday-Sunday</div>
-          <div className="callBtnFooter"><FaPhoneAlt /> <span>{process.env.REACT_APP_MOBILE}</span></div>
+          <Link  href="/#service" className="callBtnFooter"><FaPhoneAlt /> <span>{process.env.REACT_APP_MOBILE}</span></Link>
+          <Link  href="/Product" className="callBtnFooter"><FaPhoneAlt /> <span>{process.env.REACT_APP_MOBILE}</span></Link>
           <div className="footerItem"><SocialMediaMenu /></div>
         </div>
         {/* <div className="footerLine"></div> */}

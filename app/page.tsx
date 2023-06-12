@@ -1,37 +1,41 @@
 import Image from "next/image";
 import "./home.css";
-import { FaFacebookSquare, FaInstagram, FaWhatsapp, FaShippingFast, FaPlaneDeparture, FaRegCheckCircle, FaBoxOpen, FaBoxes, FaHandshake, FaStoreAlt, FaTruck, FaShip, FaWarehouse } from "react-icons/fa";
+import "./homeMobile.css";
+import { FaFacebookSquare, FaInstagram, FaWhatsapp, FaShippingFast, FaPlaneDeparture, FaRegCheckCircle, FaBoxOpen, FaBoxes, FaHandshake, FaStoreAlt, FaTruck, FaShip, FaWarehouse, FaArrowCircleUp } from "react-icons/fa";
 import { SingleMenuItem } from "@/Components/NavBar/NavBar";
 import { SingleProduct, SingleProductType, SingleService, SingleServiceType, SocialMediaMenu } from "@/Components/NavBar/SingleComponents/SingleComponent";
 import Footer from "@/Components/Footer/Footer";
+import Link from "next/link";
+
+export const menuInfo = [
+  {
+    icon: "",
+    menuText: "Home",
+    link: "/"
+  },
+  {
+    icon: "",
+    menuText: "About Us",
+    link: "#aboutUS"
+  },
+  {
+    icon: "",
+    menuText: "Products",
+    link: "#product"
+  },
+  {
+    icon: "",
+    menuText: "Services",
+    link: "#service"
+  },
+  {
+    icon: "",
+    menuText: "Contact Us",
+    link: "#contact"
+  },
+]
 export default function Home() {
-  const menuInfo = [
-    {
-      icon: "",
-      menuText: "Home",
-      link: ""
-    },
-    {
-      icon: "",
-      menuText: "About Us",
-      link: ""
-    },
-    {
-      icon: "",
-      menuText: "Products",
-      link: ""
-    },
-    {
-      icon: "",
-      menuText: "Services",
-      link: ""
-    },
-    {
-      icon: "",
-      menuText: "Contact Us",
-      link: ""
-    },
-  ]
+
   const products = [
     {
       productName: "Automobile spare parts",
@@ -86,11 +90,11 @@ export default function Home() {
     },
   ]
   return <>
-    <section className="homeBg">
+    <section className="homeBg" id="top">
       <div className="menuContainer">
         <div className="menuBar">
-          {menuInfo.map((menu) => {
-            return <SingleMenuItem icon={menu.icon} link={menu.link} menuText={menu.menuText} />
+          {menuInfo.map((menu, key) => {
+            return <SingleMenuItem key={key} icon={menu.icon} link={menu.link} menuText={menu.menuText} />
           })}
         </div>
        <SocialMediaMenu/>
@@ -103,8 +107,9 @@ export default function Home() {
         <div className="companyDescription"><q>Powering Global Trade. We connect businesses worldwide, offering streamlined import and export solutions. Trust us to simplify complexities and drive success in the international marketplace.</q>
         </div>
         <div className="bannerButtonSection">
-          <div className="btnLearnMore">Learn More</div>
-          <div className="btnServices">Our Services</div>
+          <a href="#aboutUS" className="btnLearnMore">   <div className="">Learn More</div></a>
+          <a href="#service" className="btnServices">   <div className="">Our Services</div></a>
+          {/* <a href="#service">   <div className="btnServices">Our Services</div></a> */}
         </div>
         <div className="bannerGoals">
           <div className="service">
@@ -144,7 +149,7 @@ export default function Home() {
       </div>
 
     </section>
-    <section className="aboutUsContainer">
+    <section className="aboutUsContainer" id="aboutUS">
       <div className="aboutUsImage">
         <div className="flightImage"></div>
       </div>
@@ -168,7 +173,7 @@ export default function Home() {
         </div>
       </div>
     </section>
-    <section className="productContainer">
+    <section className="productContainer" id="product">
       <div className="sectionHead">
         <FaBoxes color="#e10800" /> Our &nbsp;<span>Products</span>
       </div>
@@ -184,10 +189,10 @@ export default function Home() {
     <section className="contactUsBanner">
       <div className="sectionMainHead">Get in Touch</div>
       <div className="contactUsDetails">Contact us today to explore global import and export opportunities in India, Seychelles, and Maldives. Our expert team is ready to assist you with comprehensive solutions for your business needs. Whether you require automobile spare parts, building materials, food stuff, or marine products, we have the expertise to streamline your supply chain and ensure seamless logistics management. We value open communication and are committed to providing personalized assistance. Reach out to us through our website to start a conversation and unlock the vast potential of international trade in these countries.</div>
-      <div className="contactUsBtn">Contact Us</div>
+    <a href="#contact" className="contactUsBtn">  <div >Contact Us</div></a>
     </section>
 
-    <section className="ourServicesContainer">
+    <section className="ourServicesContainer" id="service">
       <div className="sectionHead">
         <FaHandshake color="#e10800" />Our&nbsp;<span>Services</span>
       </div>
@@ -245,12 +250,12 @@ export default function Home() {
       </div>
     </section>
     <section className="topServices">
-      {services.map((service: SingleServiceType) => {
-        return <SingleService icon={service.icon} service={service.service} image={service.image} description={service.description} />
+      {services.map((service: SingleServiceType,key) => {
+        return <SingleService key={key} icon={service.icon} service={service.service} image={service.image} description={service.description} />
         // return <SingleService image, service, icon, description />
       })}
     </section>
-    <section className="contactUs">
+    <section className="contactUs" id="contact">
       <div className="contactUsLeft">
         <div className="map">
        
@@ -263,23 +268,22 @@ export default function Home() {
       <div className="address">
        <div className="conatctUsSubHead">Address</div> 
         <div className="contactUsValues">
-          <div>Address line 1, Post office</div>
-          <div>Address line 2, Post office</div>
+          <div>{process.env.REACT_APP_ADDRESS}</div>
+
         </div>
       </div>
       <hr className="line"></hr>
       <div className="callUs">
        <div className="conatctUsSubHead">Call US</div> 
         <div className="contactUsValues">
-          <div>+91874512360</div>
-          <div>+91874512360</div>
+        <div>{process.env.REACT_APP_MOBILE}</div>
         </div>
       </div>
       <hr className="line"></hr>
       <div className="mail">
        <div className="conatctUsSubHead">Email</div> 
         <div className="contactUsValues">
-          <div>support@insource.com</div>
+        <div>{process.env.REACT_APP_EMAIL}</div>
         </div>
       </div>
       <hr className="line"></hr>
@@ -296,7 +300,10 @@ export default function Home() {
       <iframe src={process.env.REACT_APP_MAP} width="100%" height="100%" style={{border:'0'}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
-    <Footer />
+    {/* <a className="scrollToTop"  href="#top" onClick={()=>{window.scrollTo(0, 0);}}>
+      <FaArrowCircleUp /> 
+    </a> */}
+    {/* <Footer /> */}
   </>;
 }
 

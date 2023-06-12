@@ -1,8 +1,10 @@
 import { NavBar } from '@/Components/NavBar/NavBar'
 import './globals.css'
 import { Outfit } from 'next/font/google'
-
-const inter = Outfit({ subsets: ['latin'] })
+import { Suspense } from 'react';
+import Loading from "./loading"
+import Footer from '@/Components/Footer/Footer';
+const inter = Outfit({ subsets: ['latin-ext'] })
 
 export const metadata = {
   title: 'Insource Global',
@@ -17,8 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar/>
-        {children}</body>
+        <Suspense fallback={<Loading />}>
+          <NavBar />
+          {children}
+          <Footer/>
+        </Suspense>
+      </body>
     </html>
   )
 }

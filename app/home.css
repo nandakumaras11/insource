@@ -40,10 +40,12 @@
     align-items: center;
     justify-content: space-between
 }
-.contactUsValues .socialMediaMenu{
+
+.contactUsValues .socialMediaMenu {
     width: 25%;
     margin-top: 2%;
 }
+
 .socialMediaMenu div {
     border: 1px solid;
     padding: 5%;
@@ -235,11 +237,14 @@
     font-weight: 500;
     font-size: 1.5rem;
 }
+
 .aboutUsText svg,
-.sectionHead svg{
-    margin-right: 1.5%;}
+.sectionHead svg {
+    margin-right: 1.5%;
+}
+
 .aboutUsText span,
-.sectionHead span{
+.sectionHead span {
     margin-right: 1%;
 }
 
@@ -454,6 +459,7 @@
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    background-size: cover;
     /* height: 40vh; */
 }
 
@@ -517,8 +523,9 @@
     font-weight: 300;
     font-size: 0.9em;
 }
-.followUsHead{
-    color:var(--white);
+
+.followUsHead {
+    color: var(--white);
     padding: 10% 0% 0% 0%;
 }
 
@@ -539,4 +546,20 @@
     color: gray;
     border: none;
     background-color: #7e7c7cc2;
+}
+
+.mobileMenuToggle,
+.mobileMenuContainer {
+    display: none;
+}
+
+.scrollToTop {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    color: var(--red);
+    background-color:white;
+    border-radius: 50%;
+    font-size: 2.5em;
+
 }
